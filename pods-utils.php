@@ -1,7 +1,12 @@
-function show_pod_fields($pod, $selected_fields = null, $name_prefix = "", $theme_name = ""){
+<?php
+
+function pods_utils_show_pod_fields($pod, $selected_fields = null, $name_prefix = "", $theme_name = ""){
 	$pods = pods( $pod );
 	$fields = $pods->fields(); 
 	foreach($fields as $field) {
+		if($selected_fields != null)
+			if(!in_array($field['name'], $selected_fields))
+				continue;
 	?>				
 		<label for="<?php echo  $name_prefix . $field['name']; ?>">
 			<?php _e( $field['label'], $theme_name ); ?>
@@ -11,3 +16,5 @@ function show_pod_fields($pod, $selected_fields = null, $name_prefix = "", $them
 	<?php
 	}
 }
+							
+?>
