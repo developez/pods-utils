@@ -1,4 +1,4 @@
 pods-utils
 ==========
 
-Temporal repository for develop utility functions for pods framework
+Temporal repository for development of pods framework utility functions.
