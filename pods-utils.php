@@ -10,9 +10,9 @@ function pods_utils_show_pod_fields($pod, $selected_fields = null, $pod_id = nul
 	?>				
 		<label for="<?php echo  $name_prefix . $field['name']; ?>">
 			<?php _e( $field['label'], $theme_name ); ?>
-			<?php $label['options']['required'] == 1 ? _e( '(required)', $theme_name ) : ""; ?>
+			<?php $field['options']['required'] == 1 ? _e( '(required)', $theme_name ) : ""; ?>
 		</label>				
-		<?php echo PodsForm::field( $name_prefix . $field['name'], null, $field['type'], $field, $pod_name, $pod_id ); ?>
+		<?php echo PodsForm::field( $name_prefix . $field['name'], null, $field['type'], $field, $pod, $pod_id ); ?>
 	<?php
 	}
 }
